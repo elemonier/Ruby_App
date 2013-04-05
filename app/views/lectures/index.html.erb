@@ -1,0 +1,25 @@
+<h1>Listing lectures</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lectures.each do |lecture| %>
+  <tr>
+    <td><%= lecture.title %></td>
+    <td><%= lecture.date %></td>
+    <td><%= link_to 'Show', lecture %></td>
+    <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+    <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lecture', new_lecture_path %>
