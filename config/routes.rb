@@ -1,4 +1,5 @@
 Hwk2::Application.routes.draw do
+
   resources :uploads
 
 
@@ -12,6 +13,17 @@ Hwk2::Application.routes.draw do
 
 
   resources :users
+  
+  
+  resources :sessions
+  
+  match 'signup' => 'users#new', :as => 'signup' 
+  get 'login' => 'sessions#new', :as => 'login'
+  post 'login' => 'sessions#create', :as => 'login'
+  #match 'logout' => 'sessions#destroy', :as => 'logout'
+
+  
+  
 
 
   # The priority is based upon order of creation:
@@ -64,6 +76,7 @@ Hwk2::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 
