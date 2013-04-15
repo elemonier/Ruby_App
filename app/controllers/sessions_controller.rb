@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	if User.where(email: params[:session][:email]).exists?
-  		user = User.find_by(email: params[:session][:email])
-  	end
+	user = User.where(email: params[:session][:email]).first
     if user
       session[:user_id] = user.id
       redirect_to courses_path
@@ -17,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
     redirect_to root_url
   end
 
