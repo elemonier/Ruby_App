@@ -11,8 +11,14 @@
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%= course.title %></td>
-    <td><%= course.instructor %></td>
+    <td><%= course.CallNumber %></td>
+    <td><%= course.CourseTitle %></td>
+    <td><%= course.StartTime %></td>
+    <td><%= course.EndTime %></td>  
+    <td><%= course.MeetsOn %></td>  
+    <td><%= course.Building %></td>
+    <td><%= course.Room %></td>
+    <td><%= course.Instructor %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
     <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
