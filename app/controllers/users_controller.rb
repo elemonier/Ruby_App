@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
 
   skip_before_filter :require_user, :only => [:new, :create]
+  #skip_before_filter :require_admin, :only => [:new, :create]
   
   def index
     @users = User.all

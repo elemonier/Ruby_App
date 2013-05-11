@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
+  skip_before_filter :require_admin, :only => [:show, :index]
   def index
     @courses = Course.all
 
