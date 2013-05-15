@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  skip_before_filter :require_user, :only => [:new, :create]
-  #skip_before_filter :require_admin, :only => [:new, :create]
+  #skip_before_filter :require_user, :only => [:new, :create, :edit]
+  before_filter :correct_user, :only => [:edit, :update]
+  skip_before_filter :require_admin, :only => [:new, :create, :show, :index]
   
   def index
     @users = User.all
@@ -84,4 +85,14 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+ def correct_user
+   if @current_user.id.to_s != params[:id]
+     redirect_to root_url #unless @current_user.id == params[:id]
+    end
+  end
+
+
+
+
 end

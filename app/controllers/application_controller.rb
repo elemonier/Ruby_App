@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 before_filter :require_user
-before_filter :require_admin
   protect_from_forgery
+before_filter :require_admin
+#before_filter :correct_user
 
   def current_user
     if @current_user.nil?
@@ -22,9 +23,6 @@ before_filter :require_admin
   def require_admin
     if @current_user
       redirect_to root_url unless @current_user.role == 'Admin'
-    #end
-    #return @user && self.role == 'Admin'
-    #@user.role?(:Admin)
   end
   end
 end

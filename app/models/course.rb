@@ -13,4 +13,5 @@ class Course
   field :Building, type: String
   field :Room, type: String
   field :Instructor, type: String
+  field :Description, type: String
 end

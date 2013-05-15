@@ -19,6 +19,13 @@
   <b>Role:</b>
   <%= @user.role %>
 </p>
+<p>
+  <b>Courses:</b>
+  <% @user.course_ids.each do |f| %>
+  <% course = Course.where(id: f).first %>
+  <%= course.CourseTitle%>
+  <%end%>
+</p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

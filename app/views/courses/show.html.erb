@@ -40,6 +40,18 @@
   <%= @course.Instructor %>
 </p>
 
+<p>
+  <b>Description:</b>
+  <%= markdown @course.Description %>
+</p>
+
+<p>
+  <b>Current Students:</b>
+  <% @course.users.each do |usr| %>
+  <li><%= usr.first_name %></li>
+  <% end %>
+  <p>
+
 
 
 

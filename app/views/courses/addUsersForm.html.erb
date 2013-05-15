@@ -1,0 +1,4 @@
+<%= form_tag course_addUsers_path, :method => "post" do %>
+	<%= select_tag 'users[]', options_for_select(User.all.map {|u| [u.first_name, u.last_name, u.id]}) %>
+	<%= submit_tag %>
+<% end %>

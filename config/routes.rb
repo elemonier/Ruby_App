@@ -9,7 +9,13 @@ Hwk2::Application.routes.draw do
   resources :lectures
 
 
-  resources :courses
+  resources :courses do
+    resources :users
+    get 'addUsers' => 'courses#addUsersForm', :as => 'addUsers'
+    post 'addUsers' => 'courses#addUsers', :as => 'addUsers'
+    resources :uploads
+    get 'uploadFile' => 'courses#uploadFileForm', :as => 'uploadFile'
+   end
 
 
   resources :users
@@ -23,8 +29,9 @@ Hwk2::Application.routes.draw do
   post 'login' => 'sessions#create', :as => 'login'
   match 'logout' => 'sessions#destroy', :as => 'logout'
 
+
   
-  
+
 
 
   # The priority is based upon order of creation:
