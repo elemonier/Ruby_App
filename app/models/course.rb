@@ -14,4 +14,6 @@ class Course
   field :Room, type: String
   field :Instructor, type: String
   field :Description, type: String
+
+  validates :CallNumber, :presence => true, :uniqueness => true
 end
