@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   skip_before_filter :require_admin, :only => [:show, :index]
  # skip_before_filter :correct_user, :only => [:show, :index]
   def index
-    if @current_user.role == 'student'
+    if @current_user.role == 'Student'
        @courses = @current_user.courses
     else
       @courses = Course.all

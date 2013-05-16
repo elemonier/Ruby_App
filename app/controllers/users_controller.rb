@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  #skip_before_filter :require_user, :only => [:new, :create, :edit]
-  before_filter :correct_user, :only => [:edit, :update]
+  skip_before_filter :correct_user, :only => [:edit, :update, :create, :new]
   skip_before_filter :require_admin, :only => [:new, :create, :show, :index]
   
   def index
