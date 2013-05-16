@@ -1,3 +1,12 @@
+I did the 3rd and 7th options (the markdown and the url link) for my 2 features.
+Currently my program works - except for the signup. I cannot add a new user unless I am already logged in
+as an admin. I'm really sorry for the inconvenience - it was working before and I just broke it and I don't know how to fix it.
+
+Thank you-
+Emily
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
