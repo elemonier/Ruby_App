@@ -4,7 +4,11 @@ class CoursesController < ApplicationController
   skip_before_filter :require_admin, :only => [:show, :index]
  # skip_before_filter :correct_user, :only => [:show, :index]
   def index
-    @courses = Course.all
+    if @current_user.role = 'student'
+       @courses = @current_user.courses
+    else
+      @courses = Course.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

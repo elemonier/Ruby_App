@@ -62,6 +62,7 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    @user.addUrl(params[:url_name], params[:url])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -87,8 +88,8 @@ class UsersController < ApplicationController
   end
 
  def correct_user
-   if @current_user.id.to_s != params[:id]
-     redirect_to root_url #unless @current_user.id == params[:id]
+   if @current_user.id.to_s != params[:id] and @current_user.role != 'Admin'
+     redirect_to courses_path 
     end
   end
 

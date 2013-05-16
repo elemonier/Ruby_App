@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 	user = User.where(email: params[:session][:email]).first
     if user
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to courses_path
     else
       redirect_to signup_path
     end  

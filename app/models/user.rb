@@ -6,16 +6,18 @@ class User
   field :email, type: String
   field :role, type: String
   field :description, type: String
+  field :urls, type: Hash#, default: {}
   after_initialize :init
 
   has_and_belongs_to_many :courses 
 
   def init
   	self.role ||= 'Student'
+    self.urls ||= {}
   end
 
-  
-  #attr_accessible :email
-  #validates_uniqueness_of :email
+  def addUrl(name, url)
+    update_attribute :urls, urls.merge(name => url)
+  end
   
 end

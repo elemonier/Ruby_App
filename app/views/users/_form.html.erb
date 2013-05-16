@@ -23,6 +23,18 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+<p>
+  <b>Url Name:</b>
+  <%= text_field_tag 'url_name' %><br />
+  <b>Url:</b>
+  <%= text_field_tag 'url' %><br />
+</p>
+
+<p>
+  <% @user.urls.each do |name, link| %>
+  <%= link_to name, link %>
+  <% end %>
+</p>
   <div class="actions">
     <%= f.submit %>
   </div>

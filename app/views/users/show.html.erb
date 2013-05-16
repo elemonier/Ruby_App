@@ -19,6 +19,7 @@
   <b>Role:</b>
   <%= @user.role %>
 </p>
+
 <p>
   <b>Courses:</b>
   <% @user.course_ids.each do |f| %>
@@ -27,6 +28,12 @@
   <%end%>
 </p>
 
+<p>
+    <b>URLs:</b>
+    <% @user.urls.each do |name, link| %>
+      <%= link_to name, link %>
+    <% end %>
+</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
