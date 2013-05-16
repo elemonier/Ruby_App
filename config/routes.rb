@@ -13,8 +13,8 @@ Hwk2::Application.routes.draw do
     resources :users
     get 'addUsers' => 'courses#addUsersForm', :as => 'addUsers'
     post 'addUsers' => 'courses#addUsers', :as => 'addUsers'
-    resources :uploads
-    get 'uploadFile' => 'courses#uploadFileForm', :as => 'uploadFile'
+    #resources :uploads
+    #get 'uploadFile' => 'courses#uploadFileForm', :as => 'uploadFile'
    end
 
 

@@ -6,7 +6,7 @@ class User
   field :email, type: String
   field :role, type: String
   field :description, type: String
-  field :urls, type: Hash#, default: {}
+  field :urls, type: Hash
   after_initialize :init
 
   has_and_belongs_to_many :courses 

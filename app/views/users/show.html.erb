@@ -24,7 +24,7 @@
   <b>Courses:</b>
   <% @user.course_ids.each do |f| %>
   <% course = Course.where(id: f).first %>
-  <%= course.CourseTitle%>
+  <li><%= course.CourseTitle%></li>
   <%end%>
 </p>
 

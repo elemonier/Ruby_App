@@ -23,6 +23,6 @@ before_filter :require_user
   def require_admin
     if @current_user
       redirect_to courses_path unless @current_user.role == 'Admin'
-  end
+    end
   end
 end

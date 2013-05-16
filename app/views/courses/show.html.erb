@@ -50,9 +50,9 @@
   <% @course.users.each do |usr| %>
   <li><%= usr.first_name %></li>
   <% end %>
-  <p>
+  </p>
 
 <% if @current_user.role == 'Admin' %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
+  <%= link_to 'Edit', edit_course_path(@course) %>
 <% end %>
 <%= link_to 'Back', courses_path %>
