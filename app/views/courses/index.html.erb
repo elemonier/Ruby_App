@@ -25,11 +25,14 @@
     <% if @current_user.role == 'Admin' %>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Add User', course_addUsers_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?'} %></td>
     <% end %>
   </tr>
 <% end %>
-<%= link_to 'New Course', new_course_path %>
+<% if @current_user.role == 'Admin' %>
+    <%= link_to 'New Course', new_course_path %>
+<% end %>
 </table>
 
 <br />
