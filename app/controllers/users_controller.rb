@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   skip_before_filter :correct_user, :only => [:edit, :update, :create, :new]
   skip_before_filter :require_admin, :only => [:new, :create, :show, :index]
+  skip_before_filter :require_user, :only => [:new]
   
   def index
     @users = User.all
