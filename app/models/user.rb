@@ -11,6 +11,8 @@ class User
 
   has_and_belongs_to_many :courses 
 
+  validates :email, :presence => true, :uniqueness => true
+
   def init
   	self.role ||= 'Student'
     self.urls ||= {}
